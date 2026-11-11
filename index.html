@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Masuk | DIGIT TK Telkom Mojokerto</title>
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Selaras dengan dokumen: DFD/P-SPEC proses 1.1 Login dan 1.2 Validasi Hak Akses; tabel ERD: users, roles -->
+  <section class="login">
+    <div class="login-hero">
+      <img src="assets/logo.png" alt="Logo TK Telkom Mojokerto" class="logo">
+      <h1>Pantau tumbuh kembang anak, <em>satu tempat.</em></h1>
+      <p>Web monitoring perkembangan dan portofolio murid TK Telkom Mojokerto.</p>
+    </div>
+    <form id="login-form" class="login-box" autocomplete="off">
+      <h2>Selamat datang</h2>
+      <p class="muted">Masuk dengan username atau email.</p>
+      <div id="login-ok" class="ok-note" hidden></div>
+      <div id="login-error" class="alert" hidden></div>
+      <label>Username atau email <input id="username" required></label>
+      <label>Kata sandi <input id="password" type="password" required></label>
+      <label id="parent-role-wrap" hidden>Status Anda sebagai orang tua
+        <select id="parent-relationship"><option value="">Pilih status</option><option value="father">Ayah</option><option value="mother">Ibu</option><option value="guardian">Wali</option></select>
+      </label>
+      <button class="btn" type="submit">Masuk</button>
+      <p class="switch">Belum punya akun? <a href="daftar.html">Daftar</a></p>
+      <div class="demo">
+        <b>Akun contoh (klik untuk mengisi):</b>
+        <button type="button" data-fill="admin">Admin</button>
+        <button type="button" data-fill="guru">Guru</button>
+        <button type="button" data-fill="ortu">Orang Tua</button>
+        <button type="button" data-fill="kepsek">Kepala Sekolah</button>
+      </div>
+    </form>
+  </section>
+  <script src="js/data.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

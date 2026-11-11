@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Siswa | DIGIT TK Telkom Mojokerto</title>
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="siswa" data-roles="1,2,4">
+  <!-- Selaras dengan dokumen: DFD/P-SPEC proses 2.1 - 2.4 Data Siswa; tabel ERD: students, student_guardians -->
+  <div id="app">
+    <aside id="sidebar">
+      <img src="assets/logo.png" alt="Logo TK Telkom Mojokerto" class="side-logo">
+      <nav id="menu">
+        <a href="#" data-home data-page="dashboard">Beranda</a>
+        <a href="kelola-akun.html" data-page="akun" data-roles="1">Kelola Akun</a>
+        <a href="data-siswa.html" data-page="siswa" data-roles="1,2,4">Data Siswa</a>
+        <a href="perkembangan.html" data-page="perkembangan" data-roles="2,3,4">Perkembangan</a>
+        <a href="absensi.html" data-page="absensi" data-roles="2,3,4">Absensi</a>
+        <a href="kegiatan.html" data-page="kegiatan" data-roles="2,4">Kegiatan</a>
+        <a href="portofolio.html" data-page="portofolio" data-roles="2,3,4">Portofolio</a>
+        <a href="laporan-guru.html" data-page="laporan-guru" data-roles="2">Laporan Siswa</a>
+        <a href="laporan-ortu.html" data-page="laporan-ortu" data-roles="3">Laporan Anak</a>
+        <a href="verifikasi-laporan.html" data-page="verifikasi-laporan" data-roles="4">Verifikasi Laporan</a>
+        <a href="laporan.html" data-page="laporan" data-roles="4">Laporan</a>
+      </nav>
+    </aside>
+    <div class="main">
+      <header class="topbar">
+        <button id="menu-btn" class="btn ghost sm" aria-label="Menu">&#9776;</button>
+        <h2>Data Siswa</h2>
+        <div class="me"><span id="me-name"></span><button id="logout" class="btn ghost sm">Keluar</button></div>
+      </header>
+      <main id="content">
+        <div class="head">
+          <div class="filters"><label>Cari nama atau NIS<input id="cari" placeholder="Ketik untuk mencari"></label></div>
+          <button id="btn-tambah" class="btn kelola-only">+ Tambah siswa</button>
+        </div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Nama</th><th>NIS</th><th>Kelas</th><th>Jenis kelamin</th><th>Tgl lahir</th><th>Wali</th><th>Status</th><th class="kelola-only">Aksi</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table></div>
+      </main>
+    </div>
+  </div>
+  <div id="modal-root"></div>
+  <div id="toast"></div>
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/siswa.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daftar | DIGIT TK Telkom Mojokerto</title>
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Selaras dengan dokumen: DFD/P-SPEC proses 1.4 Registrasi Akun; tabel ERD: users, student_guardians, students -->
+  <section class="login">
+    <div class="login-hero">
+      <img src="assets/logo.png" alt="Logo TK Telkom Mojokerto" class="logo">
+      <h1>Bergabung dengan <em>TK Telkom Mojokerto.</em></h1>
+      <p>Pilih peran, lengkapi data, lalu masuk untuk mulai memakai DIGIT.</p>
+    </div>
+    <form id="register-form" class="login-box wide" autocomplete="off" novalidate>
+      <h2>Buat akun</h2>
+      <p class="muted">Orang tua: akun aktif jika NIS dan tanggal lahir anak cocok. Guru dan kepala sekolah: menunggu persetujuan admin.</p>
+      <div id="reg-error" class="alert" hidden></div>
+      <label>Daftar sebagai
+        <select id="role" name="role"><option value="3">Orang Tua</option><option value="2">Guru</option><option value="4">Kepala Sekolah</option></select></label>
+      <label>Nama lengkap <input name="full_name"></label>
+      <div class="row2"><label>Username <input name="username"></label><label>Email <input name="email" type="email"></label></div>
+      <div class="row2"><label>Kata sandi <input name="password" type="password"></label><label>Ulangi kata sandi <input name="password2" type="password"></label></div>
+      <div class="row2" data-child><label>NIS anak <input name="nis" inputmode="numeric"></label><label>Tanggal lahir anak <input name="dob" type="date"></label></div>
+      <label data-child>Hubungan dengan anak
+        <select name="relationship"><option value="mother">Ibu</option><option value="father">Ayah</option><option value="guardian">Wali</option></select></label>
+      <div id="staff-note" class="ok-note" hidden>Akun akan aktif setelah disetujui admin sekolah.</div>
+      <button class="btn" type="submit">Buat akun</button>
+      <p class="switch">Sudah punya akun? <a href="index.html">Masuk</a></p>
+    </form>
+  </section>
+  <script src="js/data.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>

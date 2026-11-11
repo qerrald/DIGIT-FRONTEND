@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ubah Kata Sandi | DIGIT TK Telkom Mojokerto</title>
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="sandi" data-roles="1,2,3,4">
+  <!-- Selaras dengan dokumen: DFD/P-SPEC proses 1.5 Ubah Kata Sandi; tabel ERD: users (password_hash, must_change_password) -->
+  <div id="app">
+    <aside id="sidebar">
+      <img src="assets/logo.png" alt="Logo TK Telkom Mojokerto" class="side-logo">
+      <nav id="menu">
+        <a href="#" data-home data-page="dashboard">Beranda</a>
+        <a href="kelola-akun.html" data-page="akun" data-roles="1">Kelola Akun</a>
+        <a href="data-siswa.html" data-page="siswa" data-roles="1,2,4">Data Siswa</a>
+        <a href="perkembangan.html" data-page="perkembangan" data-roles="2,3,4">Perkembangan</a>
+        <a href="absensi.html" data-page="absensi" data-roles="2,3,4">Absensi</a>
+        <a href="kegiatan.html" data-page="kegiatan" data-roles="2,4">Kegiatan</a>
+        <a href="portofolio.html" data-page="portofolio" data-roles="2,3,4">Portofolio</a>
+        <a href="laporan.html" data-page="laporan" data-roles="4">Laporan</a>
+      </nav>
+    </aside>
+    <div class="main">
+      <header class="topbar">
+        <button id="menu-btn" class="btn ghost sm" aria-label="Menu">&#9776;</button>
+        <h2>Ubah Kata Sandi</h2>
+        <div class="me"><span id="me-name"></span><button id="logout" class="btn ghost sm">Keluar</button></div>
+      </header>
+      <main id="content">
+        <div class="card" style="max-width:520px">
+          <div id="forced-note" class="alert" hidden>Demi keamanan, Anda wajib mengganti kata sandi sementara sebelum melanjutkan.</div>
+          <form id="sandi-form" class="login-box" style="padding:0;margin:0;max-width:none" novalidate>
+            <div id="sandi-error" class="alert" hidden></div>
+            <label>Kata sandi saat ini <input name="current" type="password" autocomplete="current-password"></label>
+            <label>Kata sandi baru <input name="baru" type="password" autocomplete="new-password"><span class="hint">Minimal 6 karakter dan berbeda dari yang lama.</span></label>
+            <label>Ulangi kata sandi baru <input name="konfirmasi" type="password" autocomplete="new-password"></label>
+            <div class="actions"><button class="btn">Simpan kata sandi</button><a id="batal" class="btn ghost" href="javascript:history.back()">Batal</a></div>
+          </form>
+        </div>
+      </main>
+    </div>
+  </div>
+  <div id="modal-root"></div>
+  <div id="toast"></div>
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/sandi.js"></script>
+</body>
+</html>

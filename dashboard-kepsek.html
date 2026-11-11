@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard Kepala Sekolah | DIGIT TK Telkom Mojokerto</title>
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard" data-roles="4">
+  <!-- Selaras dengan dokumen: DFD/P-SPEC proses 3.5 dan 5.5 Verifikasi, 6.1 - 6.3 Laporan -->
+  <div id="app">
+    <aside id="sidebar">
+      <img src="assets/logo.png" alt="Logo TK Telkom Mojokerto" class="side-logo">
+      <nav id="menu">
+        <a href="#" data-home data-page="dashboard">Beranda</a>
+        <a href="kelola-akun.html" data-page="akun" data-roles="1">Kelola Akun</a>
+        <a href="data-siswa.html" data-page="siswa" data-roles="1,2,4">Data Siswa</a>
+        <a href="perkembangan.html" data-page="perkembangan" data-roles="2,3,4">Perkembangan</a>
+        <a href="absensi.html" data-page="absensi" data-roles="2,3,4">Absensi</a>
+        <a href="kegiatan.html" data-page="kegiatan" data-roles="2,4">Kegiatan</a>
+        <a href="portofolio.html" data-page="portofolio" data-roles="2,3,4">Portofolio</a>
+        <a href="laporan-guru.html" data-page="laporan-guru" data-roles="2">Laporan Siswa</a>
+        <a href="laporan-ortu.html" data-page="laporan-ortu" data-roles="3">Laporan Anak</a>
+        <a href="verifikasi-laporan.html" data-page="verifikasi-laporan" data-roles="4">Verifikasi Laporan</a>
+        <a href="laporan.html" data-page="laporan" data-roles="4">Laporan</a>
+      </nav>
+    </aside>
+    <div class="main">
+      <header class="topbar">
+        <button id="menu-btn" class="btn ghost sm" aria-label="Menu">&#9776;</button>
+        <h2>Dashboard Kepala Sekolah</h2>
+        <div class="me"><span id="me-name"></span><button id="logout" class="btn ghost sm">Keluar</button></div>
+      </header>
+      <main id="content">
+        <div class="banner"><h2>Halo, <span id="nama"></span></h2><p>Verifikasi catatan guru, pantau seluruh siswa, dan buat laporan.</p>
+          <div class="shortcuts"><a class="btn line" href="perkembangan.html">Verifikasi perkembangan</a><a class="btn line" href="portofolio.html">Verifikasi portofolio</a><a class="btn line" href="verifikasi-laporan.html">Tinjau laporan semester</a><a class="btn line" href="laporan.html">Buat laporan umum</a></div></div>
+        <div class="stats">
+          <div class="stat"><b id="n-menunggu">0</b><span>Menunggu verifikasi</span></div>
+          <div class="stat"><b id="n-siswa">0</b><span>Siswa</span></div>
+          <div class="stat"><b id="n-dev">0</b><span>Catatan perkembangan</span></div>
+          <div class="stat"><b id="n-att">0</b><span>Catatan absensi</span></div>
+        </div>
+        <div class="two">
+          <div class="card"><h3>Kehadiran</h3><div class="donut-wrap"><div class="donut" id="donut"><div>0%</div></div><div class="legend" id="legend"></div></div></div>
+          <div class="card"><h3>Catatan per aspek</h3><div class="bars" id="bars"></div></div>
+        </div>
+        <div class="card"><h3>Perkembangan terbaru</h3><div class="feed" id="terbaru"></div></div>
+      </main>
+    </div>
+  </div>
+  <div id="modal-root"></div>
+  <div id="toast"></div>
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
